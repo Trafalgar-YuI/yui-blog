@@ -1,19 +1,39 @@
 {
   "name": "yui-blog",
   "version": "0.1.0",
+  "author": {
+    "name": "yui",
+    "email": "yui@apache.org"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
+    "@headlessui/react": "^1.2.0",
+    "@heroicons/react": "^1.0.1",
+    "@tailwindcss/forms": "^0.3.2",
+    "@tailwindcss/typography": "^0.4.0",
+    "alpinejs": "^2.8.2",
+    "autoprefixer": "^10.2.5",
+    "daisyui": "^1.0.0",
     "next": "10.2.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-scroll": "^1.8.2",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^10.2.2",
     "@types/react": "17.0.6",
+    "@types/styled-components": "^5.1.9",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.3.0",
+    "tailwind-styled-components": "^2.0.2",
+    "tailwindcss": "^2.1.2",
     "typescript": "4.2.4"
   }
 }
