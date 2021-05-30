@@ -1,16 +1,31 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 8px; /* y轴滚动条宽度 */
+    height: 8px; /* x轴滚动条高度 */
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px; /* 滚动条的圆角 */
+    background: #40a9ff; /* 滚动条的背景颜色 */
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px; /* 滚动条的背景区域的圆角 */
+    background: #ffff; /* 滚动条的背景颜色 */
 }

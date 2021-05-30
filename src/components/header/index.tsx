@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
+import {RiBuilding2Fill, RiLeafFill, RiCameraLensFill, RiMessage3Fill, RiBlazeFill} from "react-icons/ri";
 import tw from "tailwind-styled-components";
+import PopUpMenu from "../popUpMenu";
 
 interface IProps {
 
@@ -10,18 +12,23 @@ interface IState {
     containerActive: Boolean
 }
 
-interface ContainerProps {
+interface IContainerProps {
     $active: Boolean
 }
 
-const Container = tw.header<ContainerProps>`
-    absolute w-full
-    transition-all ease-in-out duration-500
-    ${(p) => p.$active ? 'top-4' : '-top-14'}
+const Container = tw.header<IContainerProps>`
+    fixed w-full
+    transition-top duration-500 ease-in-out
+    ${(props) => props.$active ? 'top-4' : '-top-14'}
 `;
 
 const NavBar = tw.nav`
-    w-4/5 h-14 mx-auto px-6 rounded-xl text-black bg-white bg-opacity-70 flex justify-between items-center
+    w-4/5 h-14 mx-auto px-6 rounded-xl text-black bg-white flex justify-between items-center shadow-md
+`;
+
+const ChoiceBar = tw.li`
+    text-xl px-4 p-1.5 mr-2 rounded-md hover:bg-gray-200 hover:shadow-md
+    transition-color duration-200 ease-in-out
 `;
 
 class Header extends Component<IProps, IState> {
@@ -41,13 +48,50 @@ class Header extends Component<IProps, IState> {
         return (
             <Container $active={containerActive}>
                 <NavBar>
-                    <div>LOGO</div>
+                    <div className="text-2xl">LOGO</div>
                     <ul className="flex">
-                        <li className="pr-2"><Link href="/"><a>Home</a></Link></li>
-                        <li className="px-2"><Link href="/"><a>About</a></Link></li>
-                        <li className="px-2"><Link href="/"><a>Services</a></Link></li>
-                        <li className="px-2"><Link href="/"><a>Portfolio</a></Link></li>
-                        <li className="pl-2"><Link href="/"><a>Blog</a></Link></li>
+                        <ChoiceBar>
+                            <Link href="/">
+                                <a className="flex justify-center">
+                                    <RiBuilding2Fill className="mt-1 mr-1"/>
+                                    <span>初</span>
+                                </a>
+                            </Link>
+                        </ChoiceBar>
+                        <PopUpMenu>
+                            <ChoiceBar>
+                                <Link href="/">
+                                    <a className="flex justify-center">
+                                        <RiLeafFill className="mt-1 mr-1"/>
+                                        <span>融</span>
+                                    </a>
+                                </Link>
+                            </ChoiceBar>
+                        </PopUpMenu>
+                        <ChoiceBar>
+                            <Link href="/">
+                                <a className="flex justify-center">
+                                    <RiCameraLensFill className="mt-1 mr-1"/>
+                                    <span>存</span>
+                                </a>
+                            </Link>
+                        </ChoiceBar>
+                        <ChoiceBar>
+                            <Link href="/">
+                                <a className="flex justify-center">
+                                    <RiMessage3Fill className="mt-1 mr-1"/>
+                                    <span>响</span>
+                                </a>
+                            </Link>
+                        </ChoiceBar>
+                        <ChoiceBar>
+                            <Link href="/">
+                                <a className="flex justify-center">
+                                    <RiBlazeFill className="mt-1 mr-1"/>
+                                    <span>友</span>
+                                </a>
+                            </Link>
+                        </ChoiceBar>
                     </ul>
                 </NavBar>
                 <div className="w-20 h-1 bg-white rounded mt-2 mx-auto cursor-pointer" onClick={this.clickActive}/>
