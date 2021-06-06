@@ -1,12 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Banner from '../../components/banner';
 import Header from '../../components/header';
 import SkipTool from '../../components/skipTool';
 
-interface Props {
+interface IProps {
 }
 
-class Home extends Component<Props, object> {
+interface IState {
+}
+
+class Home extends Component<IProps, IState> {
     render() {
         return (
             <>

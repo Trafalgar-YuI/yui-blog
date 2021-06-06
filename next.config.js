@@ -28,3 +28,6 @@ module.exports = withBundleAnalyzer({
         return config;
     }
 });
+
+const withYAML = require('next-yaml');
+module.exports = withYAML(module.exports);

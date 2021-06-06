@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import {animateScroll} from 'react-scroll';
-import {IoChevronBackOutline, IoChevronForwardOutline, IoArrowUpOutline, IoArrowDownOutline} from "react-icons/io5";
+import React, { Component } from 'react';
+import { animateScroll } from 'react-scroll';
+import { IoChevronBackOutline, IoChevronForwardOutline, IoArrowUpOutline, IoArrowDownOutline } from 'react-icons/io5';
 import tw from 'tailwind-styled-components';
 
 interface IProps {
-    showMenuTop: Number
+    showMenuTop: number
 }
 
 interface IState {
-    showTool: Boolean,
-    process: String
+    showTool: boolean,
+    process: string
 }
 
 interface IToolProps {
@@ -19,13 +19,13 @@ interface IToolProps {
 const Tool = tw.div<IToolProps>`
     hidden sm:block
     w-48 bg-transparent
-    fixed xl:right-56 md:right-40 sm:right-20
+    fixed xl:right-56 md:right-40 sm:right-20 z-10
     transition-bottom duration-200 ease-in-out
     ${(props) => props.$active ? 'bottom-1' : '-bottom-6'}
 `;
 
 class SkipTool extends Component<IProps, IState> {
-    validHeight: Number | undefined;
+    validHeight: number = 0;
 
     state = {
         showTool: false,
@@ -50,7 +50,6 @@ class SkipTool extends Component<IProps, IState> {
     bindHandleScroll = (event: any) => {
         const {showTool} = this.state;
         const scrollTop = event.target.documentElement.scrollTop;
-        // @ts-ignore
         const process = Math.floor(scrollTop * 100 / this.validHeight) + '%';
 
         const {showMenuTop = 0} = this.props;
@@ -75,7 +74,8 @@ class SkipTool extends Component<IProps, IState> {
                     {/* to top */}
                     <li className="cursor-pointer"><IoArrowUpOutline onClick={() => animateScroll.scrollToTop()}/></li>
                     {/* to bottom */}
-                    <li className="cursor-pointer"><IoArrowDownOutline onClick={() => animateScroll.scrollToBottom()}/></li>
+                    <li className="cursor-pointer"><IoArrowDownOutline onClick={() => animateScroll.scrollToBottom()}/>
+                    </li>
                     {/* next article */}
                     <li className="cursor-pointer"><IoChevronForwardOutline/></li>
                 </ul>

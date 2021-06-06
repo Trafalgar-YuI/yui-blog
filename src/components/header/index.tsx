@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Link from 'next/link';
-import {RiBuilding2Fill, RiLeafFill, RiCameraLensFill, RiMessage3Fill, RiBlazeFill} from "react-icons/ri";
-import tw from "tailwind-styled-components";
-import PopUpMenu from "../popUpMenu";
+import { RiBuilding2Fill, RiLeafFill, RiCameraLensFill, RiMessage3Fill, RiBlazeFill } from 'react-icons/ri';
+import tw from 'tailwind-styled-components';
+import PopUpMenu from '../popUpMenu';
 
 interface IProps {
 
@@ -17,7 +17,7 @@ interface IContainerProps {
 }
 
 const Container = tw.header<IContainerProps>`
-    fixed w-full
+    fixed w-full z-10
     transition-top duration-500 ease-in-out
     ${(props) => props.$active ? 'top-4' : '-top-14'}
 `;

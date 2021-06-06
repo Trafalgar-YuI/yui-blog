@@ -1,5 +1,5 @@
-import {Transition} from '@headlessui/react';
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
+import { Transition } from '@headlessui/react';
 import tw from 'tailwind-styled-components';
 
 interface IProps {
@@ -47,7 +47,7 @@ class PopUpMenu extends React.Component<IProps, IState> {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                 >
-                    <div className="absolute -left-1/2 top-10">
+                    <div className="absolute left-1/2 top-10 transform -translate-x-1/2">
                         <div className="w-full h-4 bg-transparent"/>
                         <ul className="w-40 py-1 px-2 bg-white rounded-md shadow-md">
                             <SubMenuButton>手记</SubMenuButton>
