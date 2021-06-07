@@ -51,7 +51,7 @@ class Header extends Component<IProps, IState> {
                     <div className="text-2xl">LOGO</div>
                     <ul className="flex">
                         <ChoiceBar>
-                            <Link href="/">
+                            <Link href="/blogs/[category]/[slug]" as="/blogs/talk/2021-03-12_introduction">
                                 <a className="flex justify-center">
                                     <RiBuilding2Fill className="mt-1 mr-1"/>
                                     <span>初</span>

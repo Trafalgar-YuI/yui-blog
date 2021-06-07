@@ -4,7 +4,7 @@ import Typed from 'typed.js';
 import { AiFillGithub, AiFillWechat, AiFillQqCircle } from 'react-icons/ai';
 
 // @ts-ignore
-import yaml from '../../../config/common.yml';
+import yaml from '../../config/common.yml';
 import Tooltip from '../tooltip';
 
 interface IProps {

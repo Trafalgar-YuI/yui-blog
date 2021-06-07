@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Banner from '../../components/banner';
-import Header from '../../components/header';
-import SkipTool from '../../components/skipTool';
+import Banner from '@/components/banner';
+import Header from '@/components/header';
+import SkipTool from '@/components/skipTool';
 
 interface IProps {
 }

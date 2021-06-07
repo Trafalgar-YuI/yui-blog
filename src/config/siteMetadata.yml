@@ -1,0 +1,15 @@
+title: "YuI's Blog"
+author: "YuI HessTina"
+headerTitle: "YuI's Blog"
+description: "A blogs created with Next.js and Tailwind.css"
+language: "zh"
+siteUrl: "https://tailwind-nextjs-starter-blogs.vercel.app"
+siteRepo: "https://github.com/timlrx/tailwind-nextjs-starter-blogs"
+email: "address@yoursite.com"
+github: "https://github.com"
+twitter: "https://twitter.com/Twitter"
+facebook: "https://facebook.com"
+youtube: "https://youtube.com"
+linkedin: 'https://www.linkedin.com'
+locale: "China"
+
