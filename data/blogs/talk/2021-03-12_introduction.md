@@ -1,8 +1,7 @@
 ---
 title: '博客的介绍'
 dateTime: '2021-03-12 11:00'
-coverImage: 'https://cdn.jsdelivr.net/gh/Trafalgar-YuI/img-bed@master/img/2021-02-20-01.png'
-articleTopImage: 'https://cdn.jsdelivr.net/gh/Trafalgar-YuI/img-bed@master/img/2021-02-25-01.jpg'
+blogTopImage: 'https://cdn.jsdelivr.net/gh/Trafalgar-YuI/img-bed@master/img/2021-02-25-01.jpg'
 description: '浅谈现在博客的由来，以及对 markdown 解析实现的功能的介绍'
 tag:
     - 'Blog'

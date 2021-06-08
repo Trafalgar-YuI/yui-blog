@@ -22,7 +22,7 @@ export function getPostSlugs(): { category: string; slug: string }[] {
 }
 
 /**
- * title, date, dateTime, coverImage, articleTopImage,
+ * title, date, dateTime, articleTopImage,
  * description, category, tag, slug
  * characters, readTime
  *

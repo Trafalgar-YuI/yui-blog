@@ -11,7 +11,7 @@ interface IState {
 }
 
 const SubMenuButton = tw.li`
-    py-2 text-center hover:bg-gray-200 hover:rounded-md cursor-pointer
+    py-2 text-center hover:bg-gray-200 hover:shadow-md rounded-md cursor-pointer
     transition-color duration-200 ease-in-out
 `;
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Link from 'next/link';
 import { RiBuilding2Fill, RiLeafFill, RiCameraLensFill, RiMessage3Fill, RiBlazeFill } from 'react-icons/ri';
 import tw from 'tailwind-styled-components';
-import PopUpMenu from '../popUpMenu';
+import PopUpMenu from '@/components/popUpMenu';
 
 interface IProps {
 
