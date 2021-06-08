@@ -2,6 +2,7 @@ module.exports = {
     // mode: 'jit',
     purge: ['./src/**/*.{js,ts,jsx,tsx}'],
     darkMode: 'class', // or 'media' or 'class'
+    important: true,
     theme: {
         extend: {
             zIndex: {
@@ -12,6 +13,7 @@ module.exports = {
                     css: {
                         color: theme('colors.gray.700'),
                         a: {
+                            textDecoration: 'none',
                             color: theme('colors.blue.500'),
                             '&:hover': {
                                 color: theme('colors.blue.600')
@@ -35,20 +37,13 @@ module.exports = {
                         'h4,h5,h6': {
                             color: theme('colors.gray.900')
                         },
-                        code: {
-                            color: theme('colors.pink.500'),
-                            backgroundColor: theme('colors.gray.100'),
-                            paddingLeft: '4px',
-                            paddingRight: '4px',
-                            paddingTop: '2px',
-                            paddingBottom: '2px',
-                            borderRadius: '0.25rem'
+                        figure: {
+                            margin: '0'
                         },
-                        'code:before': {
-                            content: 'none'
-                        },
-                        'code:after': {
-                            content: 'none'
+                        pre: {
+                            padding: '0',
+                            margin: '0',
+                            backgroundColor: theme('colors.transparent')
                         },
                         hr: {borderColor: theme('colors.gray.200')},
                         'ol li:before': {
@@ -69,6 +64,7 @@ module.exports = {
                     css: {
                         color: theme('colors.gray.300'),
                         a: {
+                            textDecoration: 'none',
                             color: theme('colors.blue.500'),
                             '&:hover': {
                                 color: theme('colors.blue.400')
@@ -92,8 +88,13 @@ module.exports = {
                         'h4,h5,h6': {
                             color: theme('colors.gray.100')
                         },
-                        code: {
-                            backgroundColor: theme('colors.gray.800')
+                        figure: {
+                            margin: '0'
+                        },
+                        pre: {
+                            padding: '0',
+                            margin: '0',
+                            backgroundColor: theme('colors.transparent')
                         },
                         hr: {borderColor: theme('colors.gray.700')},
                         'ol li:before': {

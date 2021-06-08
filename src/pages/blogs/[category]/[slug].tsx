@@ -1,13 +1,13 @@
 import React from 'react';
 import { getPostBySlug, getAllPosts } from '@/lib/files';
-import ReactMarkdown from 'react-markdown';
+import Blog from '@/layouts/blog';
 
 const PostTemplate = (props: { post: { content: string } }) => {
     const {content} = props.post;
 
     return (
         <main>
-            <ReactMarkdown children={content}/>
+            <Blog content={content}/>
         </main>
     );
 };
@@ -35,10 +35,6 @@ export const getStaticProps = async (props: { params: { category: string; slug: 
         }
     };
 };
-
-interface IS {
-
-}
 
 export const getStaticPaths = async () => {
     const posts = getAllPosts(['category', 'slug']);

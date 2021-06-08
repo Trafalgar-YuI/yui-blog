@@ -2,7 +2,7 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import { parseToDate, formatDate } from './date';
+import dayjs from 'dayjs';
 
 const postsDirectory = join(process.cwd(), 'data', 'blogs');
 
@@ -37,7 +37,7 @@ export function getPostBySlug(category: string, slug: string, fields: string[]):
     const {data, content} = matter(fileContents);
     const stats = readingTime(content);
 
-    const dateTime = parseToDate(data.dateTime);
+    const dateTime: dayjs.Dayjs = dayjs(data.dateTime, ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD HH:mm:ss']);
 
     const items = {};
 
@@ -65,7 +65,7 @@ export function getPostBySlug(category: string, slug: string, fields: string[]):
         }
         if (field === 'date') {
             // @ts-ignore
-            return items[field] = formatDate(dateTime);
+            return items[field] = dateTime.format('YYYY-MM-DD');
         }
         if (data[field]) {
             // @ts-ignore
@@ -83,6 +83,10 @@ export function getAllPosts(fields: string[]): {}[] {
     return slugs
         .map((value: { category: string; slug: string }) => getPostBySlug(value.category, value.slug, fields))
         // @ts-ignore
-        .sort((post1, post2) => (parseToDate(post1.dateTime) > parseToDate(post2.dateTime) ? -1 : 1));
-}
+        .sort((post1: { dateTime: string }, post2: { dateTime: string }) => {
+            const dateTime1: Date = dayjs(post1.dateTime, ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD HH:mm:ss']).toDate();
+            const dateTime2: Date = dayjs(post2.dateTime, ['YYYY-MM-DD HH:mm', 'YYYY-MM-DD HH:mm:ss']).toDate();
 
+            return dateTime1 > dateTime2 ? -1 : 1;
+        });
+}
