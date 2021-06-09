@@ -43,7 +43,8 @@ module.exports = {
                         pre: {
                             padding: '0',
                             margin: '0',
-                            backgroundColor: theme('colors.transparent')
+                            backgroundColor: theme('colors.transparent'),
+                            overflowX: 'unset'
                         },
                         hr: {borderColor: theme('colors.gray.200')},
                         'ol li:before': {
@@ -94,7 +95,8 @@ module.exports = {
                         pre: {
                             padding: '0',
                             margin: '0',
-                            backgroundColor: theme('colors.transparent')
+                            backgroundColor: theme('colors.transparent'),
+                            overflowX: 'unset'
                         },
                         hr: {borderColor: theme('colors.gray.700')},
                         'ol li:before': {

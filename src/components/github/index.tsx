@@ -59,14 +59,13 @@ class Github extends Component<IProps, IState> {
         const {isLoading, loadingTime, description, githubName, imgUrl} = this.state;
 
         return (
-            <div className="rounded-lg border-2 border-gray-100 shadow-lg overflow-hidden">
+            <div className="w-full h-40 rounded-lg shadow-lg overflow-hidden">
                 <a href={url} target="_blank">
-                    <div
-                        className="flex w-full h-32 border-1 border-black  transition-shadow text-black">
-                        <div className="w-2/3 p-2">
-                            <div className="h-8 text-lg text-black">{githubName}</div>
-                            <p className="break-all h-10 px-2 mt-0 w-full whitespace-normal overflow-hidden text-sm text-gray-500">{description}</p>
-                            <div className="flex text-base text-black">
+                    <div className="flex w-full h-full text-black">
+                        <div className="w-2/3 h-full p-2 pt-3">
+                            <div className="h-1/4 m-1 text-lg text-black">{githubName}</div>
+                            <p className="break-all h-1/2 m-0 -mt-2 p-2 w-full whitespace-normal overflow-hidden text-sm text-gray-500">{description}</p>
+                            <div className="h-1/4 mt-1 flex text-base text-black">
                                 <IoLogoGithub className="mt-1 mr-1"/>
                                 <span>{url}</span>
                             </div>

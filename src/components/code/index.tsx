@@ -33,7 +33,7 @@ class Code extends Component<IProps, IState> {
                 <SyntaxHighlighter customStyle={preStyle} codeTagProps={codeStyle}
                                    style={vscDarkPlus} language={language ? language : ''}
                                    children={code} wrapLines={true} showLineNumbers
-                                   lineProps={lineNumber => {
+                                   lineProps={(lineNumber: number) => {
                                        let style = {display: 'block'};
                                        if (line && line.includes(lineNumber + '')) {
                                            // @ts-ignore
